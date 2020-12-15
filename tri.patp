@@ -1,0 +1,16 @@
+LOAD 31
+ADD 1
+STORE 30
+LOAD 0
+DEC
+STORE 0
+LOAD 1
+INC
+STORE 1
+LOAD 2
+DEC
+STORE 2
+JMP 0
+
+Calculates triangle numbers until memory corruption causes the program to terminate
+  (via jumping to the end of the program).

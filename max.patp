@@ -1,0 +1,24 @@
+ADD 10
+STORE 31
+STORE 29
+CLEAR
+ADD 5
+STORE 30
+STORE 28
+LOAD 28
+DEC
+STORE 28
+BNZ 12
+JMP 18
+LOAD 29
+DEC
+STORE 29
+BUZ 7
+LOAD 30
+STORE 31
+
+Stores the maximum value of the two numbers in memory location 31.
+Does this by copying both of the values and decrementing them until
+  one becomes zero.
+The original corresponding to the zero is declared not the maximum,
+  so the other value is the maximum value and is copied to the result.

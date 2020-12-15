@@ -1,0 +1,18 @@
+ADD 27
+DEC
+BNZ 4
+JMP 10
+DEC
+STORE 30
+LOAD 31
+INC
+STORE 31
+LOAD 30
+BUZ 1
+
+Halves the input (right shift).
+The algorithm work by decremening the input twice and
+  incrementing the answer by one each time.
+If the input is ever equal to 0 or 1, then the program
+  ends and this allows for numbers not divisible by
+  two to be halved (and the result rounded down).

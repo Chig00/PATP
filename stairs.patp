@@ -1,0 +1,35 @@
+ADD 31
+STORE 31
+DEC
+BNZ 5
+JMP 11
+DEC
+STORE 0
+LOAD 30
+INC
+STORE 30
+LOAD 0
+BUZ 2
+LOAD 7
+DEC
+STORE 7
+LOAD 9
+DEC
+STORE 9
+LOAD 23
+DEC
+STORE 23
+LOAD 27
+BNZ 25
+LOAD 31
+JMP 2
+
+Creates stairs from memory stores 31 to 27 by halving the values in each store.
+Does so by decrementing the value by two until it is equal to zero or one.
+The number of loops done is half (rounded down) of the number.
+The operation memory locations are changed after each full operation, which allows
+  for the steps to be made in multiple memory locations.
+This program works with any initial value from 16 to 31 to produce stairs.
+Using different seeds can produce differently patterned stairs (e.g. seed 21
+  makes checkerboard pattern stairs and seed 16 makes a diagonal line).
+The terminator was hard coded, so values less than 16 will exhibit undefined behaviour.

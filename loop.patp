@@ -1,0 +1,13 @@
+LOAD 31
+INC
+STORE 30
+LOAD 0
+DEC
+STORE 0
+LOAD 2
+DEC
+STORE 2
+JMP 0
+
+A looping program that uses no branches to get a conditional exit.
+Instead, the program will terminate when the jump operation is ovewritten.

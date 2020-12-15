@@ -1,0 +1,29 @@
+ADD 28
+STORE 30
+CLEAR
+ADD 4
+STORE 29
+STORE 28
+LOAD 30
+DEC
+STORE 30
+LOAD 28
+DEC
+STORE 28
+BUZ 6
+LOAD 31
+INC
+STORE 31
+LOAD 29
+STORE 28
+LOAD 30
+BUZ 7
+
+Performs division, but only if the quotient would be a natural number
+Works by incrementing the value of the answer after the dividend
+  has been decremented a number of times that is equal to the divisor
+If the dividend is 28 and the divisor is 4, then every time that the
+  dividend is decremented 4 times, the answer is incremented. This
+  gives the correct answer of 7.
+If the quotient would not be a natural number, then undefined behaviour
+  can occur. Infinite loops or memory corruption may occur.

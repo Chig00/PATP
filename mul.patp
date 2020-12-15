@@ -1,0 +1,23 @@
+ADD 4
+STORE 30
+LOAD 31
+ADD 7
+STORE 31
+LOAD 30
+DEC
+STORE 30
+BUZ 2
+
+Performs multiplication by adding to the data register
+  multiple times in a loop.
+Results greater than 31 have undefined behaviour, although
+  results less than 128 probably won't have any effect.
+This is because, the overfow will only set operations with
+  no effect on control flow (INC, ADD, and DEC).
+Results greater than 127 can have an impact, which is usually
+  memory corruption or infinite loops.
+This is because, values greater than 127 can cause operations
+  like JMP and BNZ, which can make the program repeat itself.
+LOAD like INC, ADD, and DEC, has no impact, but STORE can
+  cause memory corruption, which can produce more STOREs,
+  JMPs, or BNZs.

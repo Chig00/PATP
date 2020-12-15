@@ -1,0 +1,15 @@
+ADD 11
+LOAD 0
+STORE 3
+CLEAR
+STORE 31
+
+Doubles the input (left shift).
+Does so by writing another add operation in the main
+  store, so the addition is performed twice.
+This has the side effect of giving the output an add
+  operation, but shouldn't be problematic.
+The only problematic operations to give results are
+  JMP, BNZ, and STORE, with STORE only being
+  problematic if it stores a JMP, BNZ, or makes
+  a deactivated branch active.

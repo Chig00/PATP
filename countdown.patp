@@ -1,0 +1,17 @@
+CLEAR
+ADD 10
+BNZ 4
+JMP 12
+STORE 31
+LOAD 4
+DEC
+STORE 4
+LOAD 1
+DEC
+STORE 1
+JMP 0
+
+Stores numbers decreasing in value from memory location 31
+  until the value of 0 is reached.
+Does so by decrementing parts of the program, which allows
+  for the memory location and the value added to change.

@@ -1,0 +1,48 @@
+ADD 8
+STORE 2
+CLEAR
+LOAD 6
+STORE 31
+STORE 30
+ADD 1
+STORE 29
+STORE 0
+LOAD 30
+STORE 6
+LOAD 7
+DEC
+STORE 7
+LOAD 9
+DEC
+STORE 9
+LOAD 2
+DEC
+STORE 2
+BNZ 22
+JMP 24
+LOAD 0
+JMP 6
+
+Fibonacci in PATP
+This program pushes the PATP to its limits with the program using 24 bytes of memory by itself
+  and using a further 8 bytes of memory for the results (the first 8 numbers in the Fibonacci
+  sequence are stored from MS 31 - 24).
+The program actually require 34 bytes of memory, so the memory in the program that wasn't part
+  of the main loop (the first 6 bytes) was used to store the calculation variables.
+The iterator needs to be stored in byte 2, because it is the only byte that can ever be
+  equal to zero, because clear has an opcode of 0.
+
+The algorithm works as follows:
+    The number of iterations is stored in the byte that has a 'clear' opcode.
+	The data register is cleared and then loads the add 1 operation and stores it in
+	  the last 2 bytes of memory (as the first two elements in the sequence are both 1).
+	The data register has 1 added to it and the result is stored in the next byte and a
+	  copy is also stored in MS 0, which isn't reused in the program.
+	The value in memory location 30 is loaded and stored to be the next addition for the
+	  data register (which is why the addition opcode needed to also be stored at 30 and 31).
+	The memory location being written to is then decremented, as well as the memory location
+	  being used to add to the data register.
+	The iterator is then loaded, decremented, and storeed.
+	If the iterator is zero, then the program ends.
+	If not, the data register's old value is loaded and the program jumps back into another loop.
+	This continues and updates all of the bytes from 31 to 24 with the fibonacci sequence.

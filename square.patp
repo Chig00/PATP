@@ -1,0 +1,14 @@
+ADD 5
+STORE 30
+LOAD 0
+STORE 5
+LOAD 31
+CLEAR
+STORE 31
+LOAD 30
+DEC
+STORE 30
+BUZ 4
+
+Squares a number using only a single input. Therefore, unlike with multiplication,
+  the second addition operation must be copied in (where the clear operation is).
