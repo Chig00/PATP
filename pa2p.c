@@ -89,7 +89,7 @@ void start(unsigned char main_store[]) {
 	
 	SDL_Window* window = SDL_CreateWindow(
 		PROGRAM_NAME, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		display_mode.w, display_mode.h, SDL_WINDOW_FULLSCREEN
+		display_mode.w, display_mode.h, SDL_WINDOW_SHOWN
 	);
 	
 	SDL_Surface* window_surface = SDL_GetWindowSurface(window);
